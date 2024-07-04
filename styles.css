@@ -1,0 +1,121 @@
+
+
+div {
+    box-sizing: border-box; /*https://stackoverflow.com/questions/9601357/placing-border-inside-of-div-and-not-on-its-edge*/
+}
+
+body {
+    display: flex;
+    justify-content: flex-start;
+    background: black;
+}
+
+#gridContainer {
+    height:900px;
+    width:900px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    background-color: white;
+}
+
+/* BUTTONS */
+#toolbar {
+    display:flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: space-evenly;
+}
+
+
+#buttonContainer {
+    width: 150px;
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: center;
+}
+
+#colorButtonContainer {
+        width: 150px;
+        display:flex;
+        flex-direction: column;
+        gap: 10px;
+        align-self: center;
+}
+
+
+#clearButton,
+#gridCountButton,
+#colorRedButton,
+#colorBlueButton,
+#colorGreenButton,
+#colorWhiteButton,
+#colorBlackButton
+ {
+    height:35px;
+    width: 125px;
+    align-self: center;
+    font-size: 24px;
+}
+
+#colorRedButton{
+    background-color: Red;
+    border: solid white 1px;
+    color: White;
+}
+
+#colorBlueButton{
+    background-color: blue;
+    border: solid white 1px;
+    color: White;
+}
+
+#colorGreenButton{
+    background-color: green;
+    border: solid white 1px;
+    color: White;
+}
+
+#colorWhiteButton{
+    background-color: White;
+    border: solid white 1px;
+}
+
+#colorBlackButton{
+    background-color: Black;
+    border: solid white 1px;
+    color: White;
+}
+
+/*THEMES*/
+
+.cellRedTheme {
+    background-color: red;
+    border: solid white 1px;
+    border-style: inset;
+}
+
+.cellBlueTheme {
+    background-color: blue;
+    border: solid white 1px;
+    border-style: inset;
+}
+
+.cellGreenTheme {
+    background-color: green;
+    border: solid white 1px;
+    border-style: inset;
+}
+
+.cellWhiteTheme {
+    background-color: white;
+    border: solid black 1px;
+    border-style: inset;
+}
+
+.cellBlackTheme {
+    background-color: black;
+    border: solid white 1px;
+    border-style: inset;
+}
