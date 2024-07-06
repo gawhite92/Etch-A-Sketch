@@ -6,7 +6,7 @@ div {
 
 body {
     display: flex;
-    justify-content: flex-start;
+    
     background: black;
 }
 
@@ -20,13 +20,12 @@ body {
 }
 
 /* BUTTONS */
-#toolbar {
+#leftToolbar {
     display:flex;
     flex-direction: column;
     flex-shrink: 0;
     justify-content: space-evenly;
 }
-
 
 #buttonContainer {
     width: 150px;
@@ -35,6 +34,21 @@ body {
     gap: 10px;
     align-self: center;
 }
+
+#rightToolbar {
+    display:flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: flex-end;
+}
+
+#penContainer {
+    width: 150px;
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 
 #colorButtonContainer {
         width: 150px;
@@ -45,44 +59,69 @@ body {
 }
 
 
+
+h1{
+    color:white;
+    text-align: center;
+    margin:0;
+    font-size: 20px;
+}
+
 #clearButton,
 #gridCountButton,
 #colorRedButton,
 #colorBlueButton,
 #colorGreenButton,
 #colorWhiteButton,
-#colorBlackButton
+#colorBlackButton,
+#blackPen,
+#whitePen,
+#redPen,
+#greenPen,
+#bluePen,
+#randomColorPen
  {
     height:35px;
-    width: 125px;
+    width: 90px;
     align-self: center;
     font-size: 24px;
 }
 
-#colorRedButton{
+#randomColorPen{
+    background-color: mediumorchid;
+    border: solid white 1px;
+    color: White;
+}
+
+#colorRedButton,
+#redPen{
     background-color: Red;
     border: solid white 1px;
     color: White;
 }
 
-#colorBlueButton{
+#colorBlueButton,
+#bluePen{
     background-color: blue;
     border: solid white 1px;
     color: White;
 }
 
-#colorGreenButton{
+#colorGreenButton,
+#greenPen{
     background-color: green;
     border: solid white 1px;
     color: White;
 }
 
-#colorWhiteButton{
+#colorWhiteButton,
+#whitePen{
     background-color: White;
     border: solid white 1px;
 }
 
-#colorBlackButton{
+#colorBlackButton,
+#blackPen{
     background-color: Black;
     border: solid white 1px;
     color: White;

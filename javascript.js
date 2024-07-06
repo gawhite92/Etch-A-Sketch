@@ -1,3 +1,14 @@
+let selectedColor = "black"; //Default Pen Colour
+
+function randomColorSelector(delay) {
+    setInterval(()=> {
+       console.log(colorWheel[(colorChoice = Math.floor(Math.random() * 7))]);
+    }, delay)
+}
+ 
+const colorWheel = ["black", "white", "red", "green", "blue", "pink", "yellow"]
+
+
 ///////////////////////////////////////////////////////
 //BUTTONS
 
@@ -49,6 +60,35 @@ colorBlackButton.addEventListener("click", () => {
     })
 })
 
+const redPen = document.querySelector("#redPen");
+redPen.addEventListener("click", () => {
+    return selectedColor = "red";
+    })
+
+const greenPen = document.querySelector("#greenPen");
+greenPen.addEventListener("click", () => {
+    return selectedColor = "green";
+    })
+
+const bluePen = document.querySelector("#bluePen");
+bluePen.addEventListener("click", () => {
+    return selectedColor = "blue";
+    })
+
+const blackPen = document.querySelector("#blackPen");
+blackPen.addEventListener("click", () => {
+     return selectedColor = "black";
+     })
+
+const whitePen = document.querySelector("#whitePen");
+whitePen.addEventListener("click", () => {
+    return selectedColor = "white";
+    })
+
+const randomColorPen = document.querySelector("#randomColorPen");
+randomColorPen.addEventListener("click", () => {
+    randomColorSelector(50)
+    })              
 
 ///////////////////////////////////////////////////////
 
@@ -68,12 +108,27 @@ function promptUser(){
 } 
 
 function createGrid(userChoice){
+    while (gridContainer.firstChild) {  //CLEARS ANY EXISTING GRID
+        gridContainer.removeChild(gridContainer.firstChild);}
     for(let i = 0; i < (userChoice ** 2); i++) {
     let cellSize = (900 / userChoice); //Below adjusts cell size and styles
-    let cells = document.createElement("div");
-    cells.style.width = `${cellSize}` + "px";
-    cells.style.height = `${cellSize}` + "px";
-    cells.classList.add("cellRedTheme")
-    gridContainer.appendChild(cells); //Creates requested number of cells
-    }    
+    let cell = document.createElement("div");
+    cell.style.width = `${cellSize}` + "px";
+    cell.style.height = `${cellSize}` + "px";
+    cell.classList.add("cellRedTheme")
+    gridContainer.appendChild(cell); //Creates requested number of cells
+    }  
+    hoverColor();  
+}
+
+
+
+//MOUSE OVER EFFECT
+function hoverColor(){
+const cells = gridContainer.querySelectorAll("div");
+cells.forEach(div => {
+    div.addEventListener("mouseover", () => {
+        div.style.backgroundColor = `${selectedColor}`;
+    });
+  });
 }
